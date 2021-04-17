@@ -56,7 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chapter 1: Population, sample, and sampling variability" href="chapter1-sampling-distr.html" />
+    <link rel="next" title="1. Chapter 1: Population, sample, and sampling variability" href="chapter1-sampling-distr.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -101,7 +101,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter1-sampling-distr.html">
-   Chapter 1: Population, sample, and sampling variability
+   1. Chapter 1: Population, sample, and sampling variability
   </a>
  </li>
 </ul>
@@ -113,17 +113,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="content.html">
-   Content in Jupyter Book
+   1. Content in Jupyter Book
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="markdown.html">
-     Markdown Files
+     1.1. Markdown Files
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="notebooks.html">
-     Content with notebooks
+     1.2. Content with notebooks
     </a>
    </li>
   </ul>
@@ -240,6 +240,16 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-not-seeing-the-full-picture">
+     Problem 1: Not seeing the full picture.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-sampling-variability">
+     Problem 2: Sampling Variability.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-statistical-inference">
      What is statistical inference?
     </a>
@@ -265,25 +275,25 @@
         
               <div>
                 
-  <div class="cell tag_hide-input docutils container">
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>The discipline of statistics is concerned with proper analysis and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables, the type of questions we are trying to answer, and so on. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous:</p>
 <figure class="plot">
     <center>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Duck-Rabbit_illusion.jpg" width="350px">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Duck-Rabbit_illusion.jpg" width="400px">
         <figcaption>Figure 1: Duck or Rabbit?<br> <div style="font-size:10px">Source: <a href="https://commons.wikimedia.org/wiki/Category:Rabbit%E2%80%93duck_illusion#/media/File:Duck-Rabbit_illusion.jpg">Wikimedia Commons</a></div> </figcaption>
         </center>
 </figure>
 <p>A classic example of these problems was discussed in <em>Sex Bias in Graduate Admissions: Data from Berkeley</em> study by Prof. Bickel, Prof. Hammel, and Mr. O’Connell <span id="id1">[<a class="reference internal" href="#id3"><span>1</span></a>]</span>. They considered 12,763 applications to 101 graduate programs at the University of Berkeley and wanted to answer whether the sex of the applicant had any influence in the decision to admit or reject the applicant. Table 1 shows the data collected.</p>
-<table class="table" id="id4">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Applicants to Berkeley’s graduate programs in 1973</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<table class="table" id="berkeley-table">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Applicants to Berkeley’s graduate programs in 1973</span><a class="headerlink" href="#berkeley-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -315,20 +325,40 @@
 </tr>
 </tbody>
 </table>
+<p>From <a class="reference internal" href="#berkeley-table"><span class="std std-numref">Table 1</span></a>, we can see that out of 8,442 male applicants 4,704 have been rejected, corresponding to a rejection of approximately 56% of the male applicants; whereas approximately 65% of the female applicants were rejected. Therefore, there was a 9% difference between the rejection of male applicants and the rejection of female applicant. One might mistakenly see this as evidence that there was bias against women.
+There are two problems with such conclusion, that we shall now discuss.</p>
+<div class="section" id="problem-1-not-seeing-the-full-picture">
+<h2>Problem 1: Not seeing the full picture.<a class="headerlink" href="#problem-1-not-seeing-the-full-picture" title="Permalink to this headline">¶</a></h2>
+<p>The candidates considered applied to 101 graduate programs. By aggregating the results of all programs, we are losing some important information. There are two other questions that can deeply affect the analysis:
+1. Do different programs have the same rejection rate of applicants?
+2. Are the proportions of males and females applicants similar over all the departments?</p>
+<p>The answer for these questions can be easily verified if we have access to the right data. The challenging part is not verifying these assumptions after collecting the data, it is to think of these underlying aspects, so we can collect the right data in the first place.</p>
+<p>The authors of the study states, for example, that 66% of applicants to English were women, whereas only 2% of applicants to mechanical engineering were women. Therefore, they showed that males and females applicants seek different programs. Now, if the departments have different rejection rates, and most females applicants applied to harder-to-get-in programs, that could explain the difference witnessed in the aggregated data.</p>
+</div>
+<div class="section" id="problem-2-sampling-variability">
+<h2>Problem 2: Sampling Variability.<a class="headerlink" href="#problem-2-sampling-variability" title="Permalink to this headline">¶</a></h2>
+<p>By just comparing the difference obtained in this particular year, one is ignoring the variability between years. It is very plausible that in some years there might be a few more qualified women applicants than males applicants. In other years the opposite might be true. Due to this, even if there is no bias, we expect to see some differences between the rejection rates of female applicants and male applicants. Therefore, we should not immediately conclude that there is bias based only in the absolute difference we are witnessing in a given dataset. But, then, what should we consider a tiny difference? How large the difference must be for us to conclude that there is in fact bias: 0.1%? 0.5%? 1%? 5%? 10%? 50%? What this number should be? Statistical inference will provide a reasonable way for us to answer this question! (Note: the authors of the study did consider this and applied techniques that you are going to learn later in this book.)</p>
+<p>Besides all these aspects, we need to consider the fact that there is randomness associated with the applicants. Is this difference expected due to the sampling variability, or is it too unlikely to be due sampling variability alone?</p>
+</div>
 <div class="section" id="what-is-statistical-inference">
 <h2>What is statistical inference?<a class="headerlink" href="#what-is-statistical-inference" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">abcdefff</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">4704</span><span class="o">/</span><span class="m">8442</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;abcdefff&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
+<div class="output text_html">0.557213930348259</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">2827</span><span class="o">/</span><span class="m">4321</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.65424670215228</div></div>
 </div>
 </div>
 </div>
@@ -371,7 +401,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="chapter1-sampling-distr.html" title="next page">Chapter 1: Population, sample, and sampling variability</a>
+    <a class='right-next' id="next-link" href="chapter1-sampling-distr.html" title="next page"><span class="section-number">1. </span>Chapter 1: Population, sample, and sampling variability</a>
 
         </div>
         

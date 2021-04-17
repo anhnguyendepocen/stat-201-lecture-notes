@@ -2,9 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: chapters/intro
+  numbered: true
+  
 - part: Weeks 1 to 4
   chapters: 
   - file: chapters/chapter1-sampling-distr
+
 - part: Weeks 6 to 9
   chapters: 
   - file: chapters/content

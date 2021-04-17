@@ -3,6 +3,10 @@
     margin-left: 250px;
 }
 
+p {
+  text-indent: 3em;
+}
+
 /* Configure table */
 tbody td {
     text-align: center;
