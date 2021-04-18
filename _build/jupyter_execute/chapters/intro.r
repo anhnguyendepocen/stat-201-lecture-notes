@@ -2,7 +2,7 @@
 
 suppressMessages(library(tidyverse))
 
-The discipline of statistics is concerned with proper analysis and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables, the type of questions we are trying to answer, and so on. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous: 
+The discipline of statistics is concerned with proper analysis and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables and the type of questions we are trying to answer. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous: 
 
 <figure class="plot">
     <center>
@@ -36,31 +36,31 @@ A classic example of these problems was discussed in _Sex Bias in Graduate Admis
      - 12,763
 ```
 
-From {numref}`berkeley-table`, we can see that out of 8,442 male applicants 4,704 have been rejected, corresponding to a rejection of approximately 56% of the male applicants; whereas approximately 65% of the female applicants were rejected. Therefore, there was a 9% difference between the rejection of male applicants and the rejection of female applicant. One might mistakenly see this as evidence that there was bias against women. 
-There are two problems with such conclusion, that we shall now discuss. 
+From {numref}`berkeley-table`, out of 8,442 male applicants, 4,704 were rejected, corresponding to a rejection of approximately 56%; whereas approximately 65% of the female applicants were rejected. Therefore, there was a 9% difference between the rejection of male applicants and the rejection of female applicants. One might mistakenly see this as evidence that there was bias against women. 
+There are two problems with such conclusion that we shall now discuss. 
 
-## Problem 1: Not seeing the full picture.
+<dl>
+<dt><strong>Problem 1: Not seeing the whole picture</strong></dt>
 
-The candidates considered applied to 101 graduate programs. By aggregating the results of all programs, we are losing some important information. There are two other questions that can deeply affect the analysis: 
-    1. Do different programs have the same rejection rate of applicants?
-    2. Are the proportions of males and females applicants similar over all the departments? 
+<dd><p>The candidates applied to 101 graduate programs. By aggregating the results of all programs, we are losing some important information. There are two other questions that can deeply affect the analysis: 
+(1) do different programs have the same rejection rate of applicants?; and 
+(2) are the proportions of males and females applicants similar over all the departments?</p> 
 
-The answer for these questions can be easily verified if we have access to the right data. The challenging part is not verifying these assumptions after collecting the data, it is to think of these underlying aspects, so we can collect the right data in the first place. 
+<p>The answer to these questions can be easily verified if we have access to the right data. The challenging part is not verifying these assumptions after collecting the data; it is to think of these underlying aspects so that we can collect the right data in the first place.</p>
 
-The authors of the study states, for example, that 66% of applicants to English were women, whereas only 2% of applicants to mechanical engineering were women. Therefore, they showed that males and females applicants seek different programs. Now, if the departments have different rejection rates, and most females applicants applied to harder-to-get-in programs, that could explain the difference witnessed in the aggregated data. 
+<p>The authors of the study state, for example, that 66% of applicants to the English program were women, whereas only 2% of applicants to mechanical engineering were women. They showed that males and females applicants seek different programs. If the departments have different rejection rates, and most female applicants applied to harder-to-get-in programs, that could explain the difference witnessed in the aggregated data. The authors then investigated this question and found out that the programs have highly different acceptance ratios. Surprisingly, after accounting for these aspects, the authors found a small bias in favour of women.</p> 
 
-## Problem 2: Sampling Variability.
+<p>While statistics can help with this problem, it usually is not enough. Some domain knowledge might be required for us to be able to consider different aspects of a problem and get as close as we can to the full picture. But given people's own bias, including those from domain experts, this might seem easier said than done. It is not surprising there are so many controversial topics in political and economic sciences that are never settled, no matter how much data is collected.</p></dd>
 
-By just comparing the difference obtained in this particular year, one is ignoring the variability between years. It is very plausible that in some years there might be a few more qualified women applicants than males applicants. In other years the opposite might be true. Due to this, even if there is no bias, we expect to see some differences between the rejection rates of female applicants and male applicants. Therefore, we should not immediately conclude that there is bias based only in the absolute difference we are witnessing in a given dataset. But, then, what should we consider a tiny difference? How large the difference must be for us to conclude that there is in fact bias: 0.1%? 0.5%? 1%? 5%? 10%? 50%? What this number should be? Statistical inference will provide a reasonable way for us to answer this question! (Note: the authors of the study did consider this and applied techniques that you are going to learn later in this book.) 
+<dt><strong>Problem 2: Sampling Variability</strong></dt>
 
+<dd><p>By just comparing the difference obtained in this particular year, one is ignoring the variability between years. It is very plausible that there might be a few more qualified females applicants than male applicants in some of the years. In other years the opposite might be true. Due to this, even if there is no bias, we expect to see some differences between the rejection rates of female applicants and male applicants. Therefore, we should not immediately conclude that there is bias based only on the absolute difference we witness in a given dataset. Small differences are expected to occur even in case there is no bias. However, what is a small difference? In other words, how large the difference must be for us to conclude that there is, in fact, bias: 0.1%? 0.5%? 1%? 5%? 10%? 50%? Statistical inference provides a reasonable way for us to answer this question! (Note: the authors of the study did consider this and applied techniques that we are going to explore in this book.) </p></dd>
 
-Besides all these aspects, we need to consider the fact that there is randomness associated with the applicants. Is this difference expected due to the sampling variability, or is it too unlikely to be due sampling variability alone?
+</dl>
 
 ## What is statistical inference?
 
-4704/8442
-
-2827/4321
+a
 
 # References
 
