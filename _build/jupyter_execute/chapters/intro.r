@@ -2,7 +2,7 @@
 
 suppressMessages(library(tidyverse))
 
-The discipline of statistics is concerned with proper analysis and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables and the type of questions we are trying to answer. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous: 
+The discipline of statistics is concerned with the proper collection, analysis, and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables and the type of questions we are trying to answer. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous: 
 
 <figure class="plot">
     <center>
@@ -37,7 +37,7 @@ A classic example of these problems was discussed in _Sex Bias in Graduate Admis
 ```
 
 From {numref}`berkeley-table`, out of 8,442 male applicants, 4,704 were rejected, corresponding to a rejection of approximately 56%; whereas approximately 65% of the female applicants were rejected. Therefore, there was a 9% difference between the rejection of male applicants and the rejection of female applicants. One might mistakenly see this as evidence that there was bias against women. 
-There are two problems with such conclusion that we shall now discuss. 
+There are two problems with such conclusion: 
 
 <dl>
 <dt><strong>Problem 1: Not seeing the whole picture</strong></dt>
@@ -55,12 +55,13 @@ There are two problems with such conclusion that we shall now discuss.
 <dt><strong>Problem 2: Sampling Variability</strong></dt>
 
 <dd><p>By just comparing the difference obtained in this particular year, one is ignoring the variability between years. It is very plausible that there might be a few more qualified females applicants than male applicants in some of the years. In other years the opposite might be true. Due to this, even if there is no bias, we expect to see some differences between the rejection rates of female applicants and male applicants. Therefore, we should not immediately conclude that there is bias based only on the absolute difference we witness in a given dataset. Small differences are expected to occur even in case there is no bias. However, what is a small difference? In other words, how large the difference must be for us to conclude that there is, in fact, bias: 0.1%? 0.5%? 1%? 5%? 10%? 50%? Statistical inference provides a reasonable way for us to answer this question! (Note: the authors of the study did consider this and applied techniques that we are going to explore in this book.) </p></dd>
-
 </dl>
+
+
 
 ## What is statistical inference?
 
-a
+
 
 # References
 
