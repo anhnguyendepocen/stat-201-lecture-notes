@@ -2,70 +2,38 @@
 
 suppressMessages(library(tidyverse))
 
-The discipline of statistics is concerned with the proper collection, analysis, and description of data, helping people to make better-informed decisions, and reducing the chances of making false claims. Our brain tries to find patterns everywhere, and we frequently jump to conclusions. A proper data analysis requires us to consider the variability of the data, the way the data was collected, the relationship between variables and the type of questions we are trying to answer. It is not a trivial task at all! In fact, even with the field of statistics as advanced as it is, there are still many discussions that statistical methods have not settled. Why is that? In some cases, we fail to get a complete picture from all angles of a problem. By only analyzing partial information, different people can reach different conclusions, and both might be coherent. After all, partial information can be ambiguous: 
 
-<figure class="plot">
-    <center>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Duck-Rabbit_illusion.jpg" width="400px">
-        <figcaption>Figure 1: Duck or Rabbit?<br> <div style="font-size:10px">Source: <a href="https://commons.wikimedia.org/wiki/Category:Rabbit%E2%80%93duck_illusion#/media/File:Duck-Rabbit_illusion.jpg">Wikimedia Commons</a></div> </figcaption>
-        </center>
-</figure>
+An effective way for us to learn is by observing and collecting data from the world. In fact, this is the very basis of the scientific method; after formulating the hypotheses and studying their consequences, we contrast them with data collected from the world to verify their validity (CITATION HERE). 
+Many important theories have been validated and developed through the proper collection and analysis of data. 
 
-A classic example of these problems was discussed in _Sex Bias in Graduate Admissions: Data from Berkeley_ study by Prof. Bickel, Prof. Hammel, and Mr. O'Connell {cite}`Bickel75`. They considered 12,763 applications to 101 graduate programs at the University of Berkeley and wanted to answer whether the sex of the applicant had any influence in the decision to admit or reject the applicant. Table 1 shows the data collected.
+A very famous data collection led by the British Astronomer Frank Dyson (1868 - 1939), conducted in 1919, provided data that validated Albert Einstein's (1879 - 1955) theory of relativity. This empirical verification changed the point of view of many influent scientists who questioned Einstein's new theory. Among them is Ernest Rutherford (1871 - 1937), a distinguished scientist and Nobel prize winner who worked heavily on nuclear physics.  Rutherford also conducted a very famous experiment, known as [Rutherford's Gold Foil Experiments](https://www.youtube.com/watch?v=1EdTw4I6L0U). After observing the results of his experiments, Ernest developed a new nuclear model of atoms. 
 
-```{list-table} Applicants to Berkeley's graduate programs in 1973
-    :header-rows: 1
-    :align: center
-    :name: berkeley-table
+As time progresses, we are becoming a more and more data-driven society. We are collecting data all the time about everything, from studies of new drugs: to approve a new drug, the FDA (Federal Drug Administration) requires comprehensive [clinical trials](https://www.clinicaltrials.gov/ct2/home) to check for practical evidence of the effectiveness and safety of new drugs; to [fuel consumption of vehicles](https://www.nrcan.gc.ca/energy-efficiency/transportation-alternative-fuels/fuel-consumption-guide/understanding-fuel-consumption-ratings/fuel-consumption-testing/21008); to [economic and financial data](https://www150.statcan.gc.ca/n1/en/dsbbcan). But it goes beyond research and society's well-being. 
 
-   * - Applicant
-     - Admitted
-     - Rejected
-     - Total
-   * - Male
-     - 3738
-     - 4704
-     - 8442
-   * - Female
-     - 1494
-     - 2827
-     - 4321
-   * - **Total**
-     - 5232
-     - 7531
-     - 12,763
-```
+Companies are now collecting more data than ever before. The tech giants: Google, Facebook, Amazon, Microsoft, Twitter, and Apple, are known to be collecting a staggering amount of data about anyone who uses their service (yes, you included!). This triggered discussions about Privacy around the globe: from [EU's right to be forgotten](https://publications.jrc.ec.europa.eu/repository/handle/JRC86750) {cite}`Terwangne2013`, to [Canada looking to update its privacy laws](https://www.justice.gc.ca/eng/csj-sjc/pa-lprp/opc-cpl.html); from companies being investigated and fined (e.g., [Google and Amazon](https://www.wsj.com/articles/google-amazon-fined-163-million-as-france-takes-hard-line-on-privacy-11607601278), [Apple](https://www.theguardian.com/technology/2020/nov/17/apple-faces-privacy-case-in-europe-over-iphone-tracking-id), [Twitter](https://www.wsj.com/articles/twitter-fined-546-000-in-first-cross-border-gdpr-case-for-u-s-tech-firm-11608027373)), to the Facebook and Cambridge Analytica scandal ([WSJ](https://www.wsj.com/articles/cambridge-analytica-closing-operations-following-facebook-data-controversy-1525284140), [NYT](https://www.nytimes.com/2018/04/04/us/politics/cambridge-analytica-scandal-fallout.html)), which had huge consequences, such as, Cambridge Analytica closing its operations ([WSJ](https://www.wsj.com/articles/cambridge-analytica-closing-operations-following-facebook-data-controversy-1525284140), [The Guardian](https://www.theguardian.com/uk-news/2018/may/02/cambridge-analytica-closing-down-after-facebook-row-reports-say)), [Facebook paying huge fines](https://www.theguardian.com/technology/2019/jul/24/facebook-to-pay-5bn-fine-as-regulator-files-cambridge-analytica-complaint), and [congressional probe](https://www.youtube.com/watch?v=u-FlWZ1BOcA). 
+ 
+As you can see, the proper collection and analysis of data are not just for fun (in fact, it can become quite tedious sometimes), nor just a contemporary cliche stating _data matters_. They can result in history-changing developments, improvements in the quality of life, safety,  affordability, and profits. But also, it raises pressing ethical concerns! Although discussion on ethics in the field of data sciences is beyond the scope of this book, it is a topic that is urging more serious attention and debate. 
 
-From {numref}`berkeley-table`, out of 8,442 male applicants, 4,704 were rejected, corresponding to a rejection of approximately 56%; whereas approximately 65% of the female applicants were rejected. Therefore, there was a 9% difference between the rejection of male applicants and the rejection of female applicants. One might mistakenly see this as evidence that there was bias against women. 
-There are two problems with such conclusion: 
+This book is about statistical inference. In many cases, it is not viable to study all the individuals/objects in a population due to monetary or time constraints. Data collection mechanism could also be destructive; for example,  if a company that produces car engines wants to know how many miles most of their engines can endure, they need to test the engines until they break. Naturally, they cannot test all their engines; otherwise, what would they have to sell? In such situations, one can only conduct the study in a sample of the population. 
 
-<dl>
-<dt><strong>Problem 1: Not seeing the whole picture</strong></dt>
+Statistical inference studies how we can extrapolate sample-based results/conclusions to the entire population of individuals. What distinguishes statistical inference from other types of generalizations, such as one's opinions, or reasoning, or pure guess, is that statistical inference also provides measures of uncertainty. In this way, not only can you extrapolate the results from the sample to the population but also precisely state how much uncertainty you have and what the chances are that you are entirely wrong! 
 
-<dd><p>The candidates applied to 101 graduate programs. By aggregating the results of all programs, we are losing some important information. There are two other questions that can deeply affect the analysis: 
-(1) do different programs have the same rejection rate of applicants?; and 
-(2) are the proportions of males and females applicants similar over all the departments?</p> 
+However, many aspects must be considered in a proper statistical study. For example:	
+- How much data to collect?
+- How to collect the data?
+- What type of analysis to make?
 
-<p>The answer to these questions can be easily verified if we have access to the right data. The challenging part is not verifying these assumptions after collecting the data; it is to think of these underlying aspects so that we can collect the right data in the first place.</p>
+The answers to these questions deeply affect the precision of the analysis, the type of conclusion one can make, and the scope of the generalization (what is the actual population). 
 
-<p>The authors of the study state, for example, that 66% of applicants to the English program were women, whereas only 2% of applicants to mechanical engineering were women. They showed that males and females applicants seek different programs. If the departments have different rejection rates, and most female applicants applied to harder-to-get-in programs, that could explain the difference witnessed in the aggregated data. The authors then investigated this question and found out that the programs have highly different acceptance ratios. Surprisingly, after accounting for these aspects, the authors found a small bias in favour of women.</p> 
-
-<p>While statistics can help with this problem, it usually is not enough. Some domain knowledge might be required for us to be able to consider different aspects of a problem and get as close as we can to the full picture. But given people's own bias, including those from domain experts, this might seem easier said than done. It is not surprising there are so many controversial topics in political and economic sciences that are never settled, no matter how much data is collected.</p></dd>
-
-<dt><strong>Problem 2: Sampling Variability</strong></dt>
-
-<dd><p>By just comparing the difference obtained in this particular year, one is ignoring the variability between years. It is very plausible that there might be a few more qualified females applicants than male applicants in some of the years. In other years the opposite might be true. Due to this, even if there is no bias, we expect to see some differences between the rejection rates of female applicants and male applicants. Therefore, we should not immediately conclude that there is bias based only on the absolute difference we witness in a given dataset. Small differences are expected to occur even in case there is no bias. However, what is a small difference? In other words, how large the difference must be for us to conclude that there is, in fact, bias: 0.1%? 0.5%? 1%? 5%? 10%? 50%? Statistical inference provides a reasonable way for us to answer this question! (Note: the authors of the study did consider this and applied techniques that we are going to explore in this book.) </p></dd>
-</dl>
-
-
-
-## What is statistical inference?
-
-
+The statistical inference will help you better understand the errors and uncertainties involved in a statistical study. We hope that by the end of this course, you will be able to:
+Identify practical inference problems and map these problems into proper inferential questions; 
+Conduct the correct inferential analysis to answer an inferential question;
+Interpret and document the results of an inferential analysis taking into consideration the errors and uncertainties associated with the study;
+Identify dubious studies or conclusions, especially the ones frequently reported in the media;
 
 # References
 
-```{bibliography}
+```{bibliography} ../references.bib
 :style: unsrt
 ```
 
@@ -76,6 +44,7 @@ There are two problems with such conclusion:
 :numbered: True
 :caption: Weeks 1 to 4
 
+chapter0-tidyverse-review
 chapter1-sampling-distr
 ```
 
