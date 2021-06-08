@@ -4,7 +4,7 @@
 
 ## Population
 
-
+IRdisplay::display_javascript('alert("hello");')
 
 ```{admonition} Population
 An example of an admonition with a title.
