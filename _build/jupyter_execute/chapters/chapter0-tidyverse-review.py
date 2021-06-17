@@ -1,26 +1,34 @@
-# A quick tidyverse review 
+#!/usr/bin/env python
+# coding: utf-8
 
-## Arrays
+# # A quick tidyverse review 
 
-## Tibble
+# ## Arrays
 
-## Tidyverse verbs
+# ## Tibble
 
-### `select`
+# ## Tidyverse verbs
 
-### `filter`
+# ### `select`
 
-### `mutate`
+# ### `filter`
 
-### `rename`
+# ### `mutate`
 
-### `group_by`
+# ### `rename`
 
-### `summarise`
+# ### `group_by`
 
-## ggplot2
+# ### `summarise`
 
-## Factors
+# ## ggplot2
 
-## Mapping and nested data frames
+# ## Factors
+
+# ## Mapping and nested data frames
+
+# In[ ]:
+
+
+
 
