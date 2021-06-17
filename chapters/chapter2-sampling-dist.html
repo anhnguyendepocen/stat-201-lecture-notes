@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. A quick tidyverse review &#8212; STAT 201 - Lecture Notes</title>
+    <title>2. Chapter 2 - Sampling Distribution &#8212; STAT 201 - Lecture Notes</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,7 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="2. Chapter 2 - Sampling Distribution" href="chapter2-sampling-dist.html" />
+    <link rel="next" title="1. A quick tidyverse review" href="chapter0-tidyverse-review.html" />
+    <link rel="prev" title="1. Chapter 1: Population, sample, estimator and estimates" href="chapter1-basic-concepts.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,14 +95,14 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter1-basic-concepts.html">
    1. Chapter 1: Population, sample, estimator and estimates
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter2-sampling-dist.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    2. Chapter 2 - Sampling Distribution
   </a>
  </li>
@@ -111,9 +112,9 @@
   Appendix
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter0-tidyverse-review.html">
    1. A quick tidyverse review
   </a>
  </li>
@@ -157,7 +158,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/chapters/chapter0-tidyverse-review.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/chapters/chapter2-sampling-dist.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -177,7 +178,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter0-tidyverse-review.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter2-sampling-dist.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -198,7 +199,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/chapter0-tidyverse-review.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/chapter2-sampling-dist.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -221,96 +222,16 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#arrays">
-   1.1. Arrays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tibble">
-   1.2. Tibble
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tidyverse-verbs">
-   1.3. Tidyverse verbs
+  <a class="reference internal nav-link" href="#sampling-distribution">
+   2.1. Sampling Distribution
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select">
-     1.3.1.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       select
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#filter">
-     1.3.2.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       filter
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mutate">
-     1.3.3.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mutate
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rename">
-     1.3.4.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       rename
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#group-by">
-     1.3.5.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       group_by
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summarise">
-     1.3.6.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       summarise
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#there-are-uncertainty-that-stems-from-the-population-too">
+     2.1.1. There are uncertainty that stems from the population too
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ggplot2">
-   1.4. ggplot2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#factors">
-   1.5. Factors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mapping-and-nested-data-frames">
-   1.6. Mapping and nested data frames
-  </a>
  </li>
 </ul>
 
@@ -323,43 +244,24 @@
         
               <div>
                 
-  <div class="section" id="a-quick-tidyverse-review">
-<h1><span class="section-number">1. </span>A quick tidyverse review<a class="headerlink" href="#a-quick-tidyverse-review" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="arrays">
-<h2><span class="section-number">1.1. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="chapter-2-sampling-distribution">
+<h1><span class="section-number">2. </span>Chapter 2 - Sampling Distribution<a class="headerlink" href="#chapter-2-sampling-distribution" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sampling-distribution">
+<h2><span class="section-number">2.1. </span>Sampling Distribution<a class="headerlink" href="#sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<p>different samples give different estimates, therefore we need to study the distribution of these estimates across all possible samples.</p>
+<div class="admonition-sampling-distribution admonition">
+<p class="admonition-title">Sampling distribution</p>
+<p>An example of an admonition with a title.</p>
 </div>
-<div class="section" id="tibble">
-<h2><span class="section-number">1.2. </span>Tibble<a class="headerlink" href="#tibble" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="there-are-uncertainty-that-stems-from-the-population-too">
+<h3><span class="section-number">2.1.1. </span>There are uncertainty that stems from the population too<a class="headerlink" href="#there-are-uncertainty-that-stems-from-the-population-too" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that we are going to take on individual from the population at random, what is the probability that the variable is between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>? This uncertainty comes from the population itself. Even if you knew the entire population, you couldn’t be able to answer this question with certainty, because the individuals of your population also vary.</p>
+<p>In practice we have only one sample. How can we learn about the sampling distribution?</p>
+<ul class="simple">
+<li><p>Bootstrap</p></li>
+<li><p>Central Limit Theorem</p></li>
+</ul>
 </div>
-<div class="section" id="tidyverse-verbs">
-<h2><span class="section-number">1.3. </span>Tidyverse verbs<a class="headerlink" href="#tidyverse-verbs" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="select">
-<h3><span class="section-number">1.3.1. </span><code class="docutils literal notranslate"><span class="pre">select</span></code><a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="filter">
-<h3><span class="section-number">1.3.2. </span><code class="docutils literal notranslate"><span class="pre">filter</span></code><a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="mutate">
-<h3><span class="section-number">1.3.3. </span><code class="docutils literal notranslate"><span class="pre">mutate</span></code><a class="headerlink" href="#mutate" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="rename">
-<h3><span class="section-number">1.3.4. </span><code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="group-by">
-<h3><span class="section-number">1.3.5. </span><code class="docutils literal notranslate"><span class="pre">group_by</span></code><a class="headerlink" href="#group-by" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="summarise">
-<h3><span class="section-number">1.3.6. </span><code class="docutils literal notranslate"><span class="pre">summarise</span></code><a class="headerlink" href="#summarise" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="ggplot2">
-<h2><span class="section-number">1.4. </span>ggplot2<a class="headerlink" href="#ggplot2" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="factors">
-<h2><span class="section-number">1.5. </span>Factors<a class="headerlink" href="#factors" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="mapping-and-nested-data-frames">
-<h2><span class="section-number">1.6. </span>Mapping and nested data frames<a class="headerlink" href="#mapping-and-nested-data-frames" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -372,16 +274,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "ir",
             path: "./chapters"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
@@ -391,7 +293,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="chapter2-sampling-dist.html" title="previous page"><span class="section-number">2. </span>Chapter 2 - Sampling Distribution</a>
+    <a class='left-prev' id="prev-link" href="chapter1-basic-concepts.html" title="previous page"><span class="section-number">1. </span>Chapter 1: Population, sample, estimator and estimates</a>
+    <a class='right-next' id="next-link" href="chapter0-tidyverse-review.html" title="next page"><span class="section-number">1. </span>A quick tidyverse review</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
