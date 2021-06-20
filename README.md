@@ -1,1 +1,1 @@
-# intro-to-inference
+# Lecture Notes for STAT 201
